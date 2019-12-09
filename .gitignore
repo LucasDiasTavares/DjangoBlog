@@ -1,0 +1,15 @@
+*.sqlite3
+*.venv
+venv
+*pyc
+.DS_Store
+media
+.venv
+.idea
+.env
+__pycache__
+static_root
+*.png
+*.jpg
+*.gif
+*.jpeg
