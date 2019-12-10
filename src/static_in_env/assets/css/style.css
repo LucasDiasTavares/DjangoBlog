@@ -299,6 +299,16 @@ main .site-content .post-title a {
     font-size: 1.5rem;
 }
 
+main .site-content .post-title .tags .tag {
+    background: var(--light-gradient);
+    padding: 0.4rem 1rem;
+    border-radius: 3rem;
+    font-family: var(--font-Roboto);
+    font-weight: bold;
+    color: var(--light-gray);
+    margin-top: 1rem;
+}
+
 main .site-content .post-content .post-title .post-btn {
     border-radius: 0;
     padding: 0.7rem 1.4rem;
