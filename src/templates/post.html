@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+<!-- Main content -->
+<main>
+    <section class="container">
+        <div class="site-content">
+
+            <div class="singlepostpage">
+                <!-- Dummy Single Post -->
+                <div class="post-content">
+                    <div class="post-image">
+                        <div>
+                            <img src="{% static 'assets/img/Blog-post/blog1.png' %}" class="img" alt="blog1">
+                        </div>
+                        <div class="post-info flex-row">
+                            <span><i class="fas fa-user text-grey"></i>&nbsp;&nbsp;Admin</span>
+                            <span><i class="fas fa-calendar-alt text-grey"></i>&nbsp;04 Fevereiro 2019</span>
+                            <span><i class="fas fa-comment text-grey"></i>&nbsp;0</span>
+                        </div>
+                    </div>
+                    <div class="post-title">
+                        <a href="#">67 caracteres contando com os espaços, é o tamanho máximo permitido!!!!!!!!!!</a>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, enim ipsam rerum ullam vero qui necessitatibus dignissimos distinctio? Repellendus eveniet, impedit eligendi officia repellat magni quo asperiores nihil tempore nam harum nulla consequuntur deserunt culpa quam facilis. Rerum perspiciatis obcaecati vitae necessitatibus odio amet dolore, iure accusantium incidunt velit placeat.</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima tenetur ex tempora vitae magnam hic praesentium, nam ipsum velit. Facere, sint minima? Dicta cumque excepturi iste, aliquam repudiandae temporibus consequatur enim aut voluptate possimus laudantium nulla, ea, consequuntur eveniet soluta vel? Officia rerum laudantium laboriosam at quidem delectus vel numquam autem hic, voluptas sequi! Repellendus ipsa, debitis obcaecati sit quam delectus ab, nobis perferendis facere nemo esse dicta ut totam veniam consectetur iste eveniet vero enim sint, culpa voluptate? Aliquam ut repellat mollitia impedit delectus expedita dolore! Officiis, enim libero! Adipisci voluptatum perferendis necessitatibus earum, assumenda reprehenderit aliquam! Facere, dolore!</p>
+                        <img src="{% static 'assets/img/Blog-post/blog3.png' %}" class="img" alt="blog1">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae maiores magni laboriosam temporibus quos a nobis culpa veritatis perspiciatis reiciendis quisquam, ratione aliquid! Tempore officia non dolor at earum ipsum.</p>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat amet quisquam consequuntur neque possimus maxime dolores doloribus esse sequi, aliquid, reprehenderit voluptatibus sapiente placeat asperiores fugit. Cupiditate cum illum suscipit odio exercitationem. Quia non modi itaque aperiam, laborum provident cum magni beatae eum vero earum quas animi fugit excepturi molestiae? Voluptas explicabo eum inventore libero eos, facere quam incidunt perferendis facilis hic? Eum, soluta. Accusamus alias tenetur quibusdam id illo voluptatibus architecto dolore! Reiciendis, corrupti in? Dicta rem praesentium eum eveniet voluptates nulla sapiente accusantium vitae voluptatum beatae quia nesciunt, veritatis repudiandae quisquam. Blanditiis aspernatur totam autem laudantium asperiores. Debitis non amet numquam doloribus deserunt ad quis consectetur similique distinctio itaque nemo nesciunt eaque rerum, sequi voluptate, ipsam nam quod harum qui error in? Illum natus esse quia neque necessitatibus sequi eos quos ut reprehenderit incidunt, praesentium quas vero enim commodi aliquid, ipsa ratione possimus accusantium atque, magni exercitationem omnis. Debitis vel blanditiis cupiditate recusandae placeat, officiis quidem itaque qui enim? Debitis ut, nemo officiis aut vero deserunt non assumenda eius doloremque. Modi fugiat adipisci nemo veniam saepe asperiores commodi reiciendis, quasi doloribus necessitatibus eaque at culpa quae aperiam ea incidunt temporibus numquam odio, exercitationem facilis nisi iste corrupti voluptatibus?</p>
+                        <img src="{% static 'assets/img/Blog-post/blog4.png' %}" class="img" alt="blog1">
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut dolor tenetur expedita hic repellat provident autem nostrum reprehenderit fuga, fugiat, doloribus magnam! Quia iusto praesentium, rem amet provident accusantium aliquam eligendi autem quo facilis commodi totam! Accusantium blanditiis libero dolore?</p>
+                    </div>
+                </div><!-- end of  dummy post -->
+                <div class="post-suggested"><span>Posts sugeridos</span></div>
+                <div class="next-previus-post flex-row">
+                    <div class="post-title flex-row">
+
+                        <a href="#">
+                            <i class="fas fa-chevron-left"></i>
+                            <span>67 caracteres contando com os espaços, é o tamanho máximo permitido!!!!!!!!!!</span>
+                        </a>
+                    </div>
+                    <div class="post-title flex-row">
+                        <a href="#"><span>67 caracteres contando com os espaços, é o tamanho máximo permitido!!!!!!!!!!</span><i class="fas fa-chevron-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            {% include "components/sidebar.html" %}
+
+
+
+        </div>
+
+        </div>
+    </section>
+</main>
+{% endblock content %}

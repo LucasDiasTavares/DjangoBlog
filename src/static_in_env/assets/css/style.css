@@ -683,3 +683,64 @@ main .site-content .postpage .post-title p {
         margin-top: 1rem;
     }
 }
+
+/*-- Post (Single Post) --*/
+
+
+
+main .container .site-content .singlepostpage>div {
+    padding-bottom: 0.8rem;
+}
+
+main .site-content .singlepostpage .post-content>.post-image .post-info {
+    left: 0;
+    border-radius: 0;
+    padding: 0.6rem;
+    font-size: 0.8rem;
+    margin-left: 7%;
+}
+
+main .site-content .singlepostpage .post-title a {
+    font-size: 1.1rem;
+}
+
+main .site-content .singlepostpage .post-title p {
+    font-size: 0.9rem;
+}
+
+/*PAGINATION*/
+.site-content .next-previus-post {
+    justify-content: center;
+    color: black;
+    margin: 4rem 0;
+}
+
+.site-content .next-previus-post a {
+    padding: 0.7rem 0.7rem;
+    margin: 0 0.3rem;
+    font-weight: bold;
+    color: var(--light-gray);
+    border: solid 2px black;
+    font-family: var(--font-Anton);
+}
+
+.site-content .post-suggested {
+    font-weight: bold;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.site-content .post-suggested span {
+    border-bottom: solid 2px black;
+}
+
+.site-content .next-previus-post a span {
+    margin: 1rem 1rem;
+}
+
+/* max 330px extra-smallsmartphones */
+@media only screen and (max-width: 330px) {
+    main .site-content .singlepostpage .post-title p {
+        display: block;
+    }
+}
