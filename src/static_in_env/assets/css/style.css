@@ -307,6 +307,7 @@ main .site-content .post-title .tags .tag {
     font-weight: bold;
     color: var(--light-gray);
     margin-top: 1rem;
+    font-size: 1rem;
 }
 
 main .site-content .post-content .post-title .post-btn {

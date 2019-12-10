@@ -96,28 +96,37 @@
             <!-- POSTS -->
             <div class="posts">
                 <!-- Dummy Post 1 -->
+                {% for obj in object_list %}
                 <div class="post-content">
                     <div class="post-image">
                         <div>
-                            <img src="{% static 'assets/img/Blog-post/blog1.png' %}" class="img" alt="blog1">
+                            <img src="{{ obj.thumbnail.url }}" class="img" alt="blog1">
                         </div>
                         <div class="post-info flex-row">
-                            <span><i class="fas fa-user text-grey"></i>&nbsp;&nbsp;Admin</span>
-                            <span><i class="fas fa-calendar-alt text-grey"></i>&nbsp;04 Dezembro 2019</span>
-                            <span><i class="fas fa-comment text-grey"></i>&nbsp;10</span>
+                            <span><i class="fas fa-user text-grey"></i>&nbsp;&nbsp;{{ obj.author }}</span>
+                            <span><i class="fas fa-calendar-alt text-grey"></i>&nbsp;{{ obj.timestamp|timesince }} atrás</span>
+                            <span><i class="fas fa-comment text-grey"></i>&nbsp;{{ obj.comment_count }}</span>
                         </div>
                     </div>
                     <div class="post-title">
-                        <a href="#"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, consectetur!</a>
+                        <a href="#"> {{ obj.title }} </a>
                         <div class="tags flex-row">
-                            <span class="tag">Design</span>
-                            <span class="tag">Fashion</span>
+                            {% for cat in obj.categories.all %}
+                            <a href="#">
+                                <span class="tag">{{ cat.title }}</span>
+                            </a>
+                            {% endfor %}
+                            <a href="">
+                                <span class="tag">Fashion</span>
+                            </a>
                         </div>
-                        <p class="display">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut dolor tenetur expedita hic repellat provident autem nostrum reprehenderit fuga, fugiat, doloribus magnam! Quia iusto praesentium, rem amet provident accusantium aliquam eligendi autem quo facilis commodi totam! Accusantium blanditiis libero dolore?</p>
+                        <p class="display">{{ obj.overview }}</p>
                         <button class="btn post-btn">Leia mais &nbsp; <i class="fas fa-arrow-right"></i> </button>
                     </div>
                 </div><!-- end of  dummy post -->
-                <hr>
+                {% endfor %}
+
+                {% comment %}
                 <!-- Dummy Post 2 -->
                 <div class="post-content">
                     <div class="post-image">
@@ -136,7 +145,7 @@
                         <button class="btn post-btn">Leia mais &nbsp; <i class="fas fa-arrow-right"></i> </button>
                     </div>
                 </div><!-- end of  dummy post -->
-                <hr>
+
                 <!-- Dummy Post 3 -->
                 <div class="post-content">
                     <div class="post-image">
@@ -155,7 +164,6 @@
                         <button class="btn post-btn">Leia mais &nbsp; <i class="fas fa-arrow-right"></i> </button>
                     </div>
                 </div><!-- end of  dummy post -->
-                <hr>
                 <!-- Dummy Post 4 -->
                 <div class="post-content">
                     <div class="post-image">
@@ -174,6 +182,7 @@
                         <button class="btn post-btn">Leia mais &nbsp; <i class="fas fa-arrow-right"></i> </button>
                     </div>
                 </div><!-- end of  dummy post -->
+                {% endcomment %}
 
                 <div class="pagination flex-row">
                     <a href="#"><i class="fas fa-chevron-left"></i></a>
