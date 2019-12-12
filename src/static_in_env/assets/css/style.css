@@ -412,20 +412,17 @@ main .site-content .post-content .post-title .post-btn {
     font-weight: bold;
 }
 
-/*SIDEBAR POPULAR TAGS*/
-.site-content .sidebar .popular-tags {
-    padding: 4rem 0;
+/*SIDEBAR SEARCH FIELD*/
+
+input {
+    border: none;
 }
 
-.site-content .sidebar .popular-tags .tags .tag {
-    background: var(--light-gradient);
-    padding: 0.4rem 1rem;
-    border-radius: 3rem;
-    margin: 0.4rem 0.6rem;
-    font-family: var(--font-Roboto);
-    font-weight: bold;
-    color: var(--light-gray);
+.site-content .sidebar .search-form .form-group {
+    border-bottom: solid 1px var(--light-gray);
+    padding: 0.4rem;
 }
+
 
 /* End of Site Content */
 

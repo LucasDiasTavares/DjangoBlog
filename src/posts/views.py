@@ -5,7 +5,7 @@ from .models import Post
 
 
 def get_category_count():
-    # method to see the name and the count of every category
+    # method to see the name and count of every category
     queryset = Post.objects.values(
         'categories__title').annotate(Count('categories__title'))
     return queryset
@@ -34,7 +34,7 @@ def blog(request):
     post_list = Post.objects.all().order_by('-timestamp')
 
     # latest posts
-    most_recent = Post.objects.order_by('-timestamp')[0:3]
+    most_recent = Post.objects.order_by('-timestamp')[0:4]
 
     # Pagination
     paginator = Paginator(post_list, 8)
