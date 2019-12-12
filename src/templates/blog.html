@@ -9,25 +9,35 @@
         <div class="site-content">
 
             <div class="postpage">
-                <!-- Dummy Post 1 -->
+                <!-- Post -->
+                {% for post in post_list %}
                 <div class="post-content">
                     <div class="post-image">
                         <div>
-                            <img src="{% static 'assets/img/Blog-post/blog1.png' %}" class="img" alt="blog1">
+                            <img src="{{ post.thumbnail.url }}" class="img" alt="{{post.title}}">
                         </div>
                         <div class="post-info flex-row">
-                            <span><i class="fas fa-user text-grey"></i>&nbsp;&nbsp;Admin</span>
-                            <span><i class="fas fa-calendar-alt text-grey"></i>&nbsp;04 Fevereiro 2019</span>
-                            <span><i class="fas fa-comment text-grey"></i>&nbsp;0</span>
+                            <span><i class="fas fa-user text-grey"></i>&nbsp;&nbsp;{{ post.author }}</span>
+                            <span><i class="fas fa-calendar-alt text-grey"></i>&nbsp;{{ post.timestamp|timesince }} atrás</span>
+                            <span><i class="fas fa-comment text-grey"></i>&nbsp;{{ post.comment_count }}</span>
                         </div>
                     </div>
                     <div class="post-title">
-                        <a href="#">67 caracteres contando com os espaços, é o tamanho máximo permitido!!!!!!!!!!</a>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut dolor tenetur expedita hic repellat provident autem nostrum reprehenderit fuga, fugiat, doloribus magnam! Quia iusto praesentium, rem amet provident accusantium aliquam eligendi autem quo facilis commodi totam! Accusantium blanditiis libero dolore?</p>
-                        <button class="btn post-btn">Reade more &nbsp; <i class="fas fa-arrow-right"></i> </button>
+                        <a href="#"> {{ post.title }} </a>
+                        <div class="tags flex-row">
+                            {% for cat in post.categories.all %}
+                            <a href="#">
+                                <span class="tag">{{ cat.title }}</span>
+                            </a>
+                            {% endfor %}
+                        </div>
+                        <p>{{ post.overview }}</p>
+                        <button class="btn post-btn">Leia mais &nbsp; <i class="fas fa-arrow-right"></i> </button>
                     </div>
-                </div><!-- end of  dummy post -->
+                </div><!-- end of post -->
+                {% endfor %}
 
+                {% comment %}
                 <!-- Dummy Post 2 -->
                 <div class="post-content">
                     <div class="post-image">
@@ -43,7 +53,7 @@
                     <div class="post-title">
                         <a href="#"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, consectetur!</a>
                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut dolor tenetur expedita hic repellat provident autem nostrum reprehenderit fuga, fugiat, doloribus magnam! Quia iusto praesentium, rem amet provident accusantium aliquam eligendi autem quo facilis commodi totam! Accusantium blanditiis libero dolore?</p>
-                        <button class="btn post-btn">Reade more &nbsp; <i class="fas fa-arrow-right"></i> </button>
+                        <button class="btn post-btn">Leia mais &nbsp; <i class="fas fa-arrow-right"></i> </button>
                     </div>
                 </div><!-- end of  dummy post -->
 
@@ -62,7 +72,7 @@
                     <div class="post-title">
                         <a href="#"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, consectetur!</a>
                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut dolor tenetur expedita hic repellat provident autem nostrum reprehenderit fuga, fugiat, doloribus magnam! Quia iusto praesentium, rem amet provident accusantium aliquam eligendi autem quo facilis commodi totam! Accusantium blanditiis libero dolore?</p>
-                        <button class="btn post-btn">Reade more &nbsp; <i class="fas fa-arrow-right"></i> </button>
+                        <button class="btn post-btn">Leia mais &nbsp; <i class="fas fa-arrow-right"></i> </button>
                     </div>
                 </div><!-- end of  dummy post -->
 
@@ -81,7 +91,7 @@
                     <div class="post-title">
                         <a href="#"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, consectetur!</a>
                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut dolor tenetur expedita hic repellat provident autem nostrum reprehenderit fuga, fugiat, doloribus magnam! Quia iusto praesentium, rem amet provident accusantium aliquam eligendi autem quo facilis commodi totam! Accusantium blanditiis libero dolore?</p>
-                        <button class="btn post-btn">Reade more &nbsp; <i class="fas fa-arrow-right"></i> </button>
+                        <button class="btn post-btn">Leia mais &nbsp; <i class="fas fa-arrow-right"></i> </button>
                     </div>
                 </div><!-- end of  dummy post -->
 
@@ -100,7 +110,7 @@
                     <div class="post-title">
                         <a href="#"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, consectetur!</a>
                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut dolor tenetur expedita hic repellat provident autem nostrum reprehenderit fuga, fugiat, doloribus magnam! Quia iusto praesentium, rem amet provident accusantium aliquam eligendi autem quo facilis commodi totam! Accusantium blanditiis libero dolore?</p>
-                        <button class="btn post-btn">Reade more &nbsp; <i class="fas fa-arrow-right"></i> </button>
+                        <button class="btn post-btn">Leia mais &nbsp; <i class="fas fa-arrow-right"></i> </button>
                     </div>
                 </div><!-- end of  dummy post -->
 
@@ -119,7 +129,7 @@
                     <div class="post-title">
                         <a href="#"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, consectetur!</a>
                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut dolor tenetur expedita hic repellat provident autem nostrum reprehenderit fuga, fugiat, doloribus magnam! Quia iusto praesentium, rem amet provident accusantium aliquam eligendi autem quo facilis commodi totam! Accusantium blanditiis libero dolore?</p>
-                        <button class="btn post-btn">Reade more &nbsp; <i class="fas fa-arrow-right"></i> </button>
+                        <button class="btn post-btn">Leia mais &nbsp; <i class="fas fa-arrow-right"></i> </button>
                     </div>
                 </div><!-- end of  dummy post -->
 
@@ -138,7 +148,7 @@
                     <div class="post-title">
                         <a href="#"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, consectetur!</a>
                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut dolor tenetur expedita hic repellat provident autem nostrum reprehenderit fuga, fugiat, doloribus magnam! Quia iusto praesentium, rem amet provident accusantium aliquam eligendi autem quo facilis commodi totam! Accusantium blanditiis libero dolore?</p>
-                        <button class="btn post-btn">Reade more &nbsp; <i class="fas fa-arrow-right"></i> </button>
+                        <button class="btn post-btn">Leia mais &nbsp; <i class="fas fa-arrow-right"></i> </button>
                     </div>
                 </div><!-- end of  dummy post -->
 
@@ -157,10 +167,10 @@
                     <div class="post-title">
                         <a href="#"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, consectetur!</a>
                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut dolor tenetur expedita hic repellat provident autem nostrum reprehenderit fuga, fugiat, doloribus magnam! Quia iusto praesentium, rem amet provident accusantium aliquam eligendi autem quo facilis commodi totam! Accusantium blanditiis libero dolore?</p>
-                        <button class="btn post-btn">Reade more &nbsp; <i class="fas fa-arrow-right"></i> </button>
+                        <button class="btn post-btn">Leia mais &nbsp; <i class="fas fa-arrow-right"></i> </button>
                     </div>
                 </div><!-- end of  dummy post -->
-
+                {% endcomment %}
             </div>
 
             <!-- Sidebar -->
