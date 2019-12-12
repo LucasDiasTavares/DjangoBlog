@@ -1,16 +1,36 @@
-from django.db.models import Count
+from django.db.models import Count, Q
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.shortcuts import render
 from .models import Post
 
 
+# Methods
 def get_category_count():
-    # method to see the name and count of every category
+    # Method to see the name and count of every category
     queryset = Post.objects.values(
         'categories__title').annotate(Count('categories__title'))
     return queryset
 
 
+def search(request):
+    # Grab all of my posts
+    queryset = Post.objects.all()
+    # GET parameter from my url, my 'q' needs to be exacly name from your form (name="q")
+    query = request.GET.get('q')
+    if query:
+        queryset = queryset.filter(
+            # Filter by title or overview, you can put as many fields you want
+            Q(title__icontains=query) |
+            Q(overview__icontains=query)
+        ).distinct()
+    context = {
+        'queryset': queryset
+    }
+
+    return render(request, 'search_results.html', context)
+
+
+# Pages
 def index(request):
     """
         Grab only the posts that have featured=True, in future this will be my owl carousel

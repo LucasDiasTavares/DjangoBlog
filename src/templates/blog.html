@@ -46,7 +46,7 @@
                 <div>
                     <h2>Procure no blog</h2>
                     <div class="flex-row">
-                        <form action="" class="search-form">
+                        <form action="{% url 'search' %}" class="search-form">
                             <div class="form-group">
                                 <input type="text" name="q" placeholder="O que você está procurando?">
                                 <i class="fas fa-search"></i>
@@ -57,7 +57,7 @@
                 </div>
 
                 <div class="popular-post">
-                    <h2>Popular Posts</h2>
+                    <h2>Ultimos Posts</h2>
                     <!-- Latest Post -->
                     {% for post in most_recent %}
                     <div>
