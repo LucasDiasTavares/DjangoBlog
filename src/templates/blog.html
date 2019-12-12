@@ -10,7 +10,7 @@
 
             <div class="postpage">
                 <!-- Post -->
-                {% for post in post_list %}
+                {% for post in queryset %}
                 <div class="post-content">
                     <div class="post-image">
                         <div>
@@ -36,152 +36,25 @@
                     </div>
                 </div><!-- end of post -->
                 {% endfor %}
-
-                {% comment %}
-                <!-- Dummy Post 2 -->
-                <div class="post-content">
-                    <div class="post-image">
-                        <div>
-                            <img src="{% static 'assets/img/Blog-post/blog2.png' %}" class="img" alt="blog1">
-                        </div>
-                        <div class="post-info flex-row">
-                            <span><i class="fas fa-user text-grey"></i>&nbsp;&nbsp;Admin</span>
-                            <span><i class="fas fa-calendar-alt text-grey"></i>&nbsp;03 Fevereiro 2019</span>
-                            <span><i class="fas fa-comment text-grey"></i>&nbsp;1</span>
-                        </div>
-                    </div>
-                    <div class="post-title">
-                        <a href="#"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, consectetur!</a>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut dolor tenetur expedita hic repellat provident autem nostrum reprehenderit fuga, fugiat, doloribus magnam! Quia iusto praesentium, rem amet provident accusantium aliquam eligendi autem quo facilis commodi totam! Accusantium blanditiis libero dolore?</p>
-                        <button class="btn post-btn">Leia mais &nbsp; <i class="fas fa-arrow-right"></i> </button>
-                    </div>
-                </div><!-- end of  dummy post -->
-
-                <!-- Dummy Post 3 -->
-                <div class="post-content">
-                    <div class="post-image">
-                        <div>
-                            <img src="{% static 'assets/img/Blog-post/blog3.png' %}" class="img" alt="blog1">
-                        </div>
-                        <div class="post-info flex-row">
-                            <span><i class="fas fa-user text-grey"></i>&nbsp;&nbsp;Admin</span>
-                            <span><i class="fas fa-calendar-alt text-grey"></i>&nbsp;02 Fevereiro 2019</span>
-                            <span><i class="fas fa-comment text-grey"></i>&nbsp;29</span>
-                        </div>
-                    </div>
-                    <div class="post-title">
-                        <a href="#"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, consectetur!</a>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut dolor tenetur expedita hic repellat provident autem nostrum reprehenderit fuga, fugiat, doloribus magnam! Quia iusto praesentium, rem amet provident accusantium aliquam eligendi autem quo facilis commodi totam! Accusantium blanditiis libero dolore?</p>
-                        <button class="btn post-btn">Leia mais &nbsp; <i class="fas fa-arrow-right"></i> </button>
-                    </div>
-                </div><!-- end of  dummy post -->
-
-                <!-- Dummy Post 4 -->
-                <div class="post-content">
-                    <div class="post-image">
-                        <div>
-                            <img src="{% static 'assets/img/Blog-post/blog4.png' %}" class="img" alt="blog1">
-                        </div>
-                        <div class="post-info flex-row">
-                            <span><i class="fas fa-user text-grey"></i>&nbsp;&nbsp;Admin</span>
-                            <span><i class="fas fa-calendar-alt text-grey"></i>&nbsp;01 Fevereiro 2019</span>
-                            <span><i class="fas fa-comment text-grey"></i>&nbsp;298</span>
-                        </div>
-                    </div>
-                    <div class="post-title">
-                        <a href="#"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, consectetur!</a>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut dolor tenetur expedita hic repellat provident autem nostrum reprehenderit fuga, fugiat, doloribus magnam! Quia iusto praesentium, rem amet provident accusantium aliquam eligendi autem quo facilis commodi totam! Accusantium blanditiis libero dolore?</p>
-                        <button class="btn post-btn">Leia mais &nbsp; <i class="fas fa-arrow-right"></i> </button>
-                    </div>
-                </div><!-- end of  dummy post -->
-
-                <!-- Dummy Post 5 -->
-                <div class="post-content">
-                    <div class="post-image">
-                        <div>
-                            <img src="{% static 'assets/img/Blog-post/blog3.png' %}" class="img" alt="blog1">
-                        </div>
-                        <div class="post-info flex-row">
-                            <span><i class="fas fa-user text-grey"></i>&nbsp;&nbsp;Admin</span>
-                            <span><i class="fas fa-calendar-alt text-grey"></i>&nbsp;02 Fevereiro 2019</span>
-                            <span><i class="fas fa-comment text-grey"></i>&nbsp;29</span>
-                        </div>
-                    </div>
-                    <div class="post-title">
-                        <a href="#"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, consectetur!</a>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut dolor tenetur expedita hic repellat provident autem nostrum reprehenderit fuga, fugiat, doloribus magnam! Quia iusto praesentium, rem amet provident accusantium aliquam eligendi autem quo facilis commodi totam! Accusantium blanditiis libero dolore?</p>
-                        <button class="btn post-btn">Leia mais &nbsp; <i class="fas fa-arrow-right"></i> </button>
-                    </div>
-                </div><!-- end of  dummy post -->
-
-                <!-- Dummy Post 6 -->
-                <div class="post-content">
-                    <div class="post-image">
-                        <div>
-                            <img src="{% static 'assets/img/Blog-post/blog4.png' %}" class="img" alt="blog1">
-                        </div>
-                        <div class="post-info flex-row">
-                            <span><i class="fas fa-user text-grey"></i>&nbsp;&nbsp;Admin</span>
-                            <span><i class="fas fa-calendar-alt text-grey"></i>&nbsp;01 Fevereiro 2019</span>
-                            <span><i class="fas fa-comment text-grey"></i>&nbsp;298</span>
-                        </div>
-                    </div>
-                    <div class="post-title">
-                        <a href="#"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, consectetur!</a>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut dolor tenetur expedita hic repellat provident autem nostrum reprehenderit fuga, fugiat, doloribus magnam! Quia iusto praesentium, rem amet provident accusantium aliquam eligendi autem quo facilis commodi totam! Accusantium blanditiis libero dolore?</p>
-                        <button class="btn post-btn">Leia mais &nbsp; <i class="fas fa-arrow-right"></i> </button>
-                    </div>
-                </div><!-- end of  dummy post -->
-
-                <!-- Dummy Post 7 -->
-                <div class="post-content">
-                    <div class="post-image">
-                        <div>
-                            <img src="{% static 'assets/img/Blog-post/blog1.png' %}" class="img" alt="blog1">
-                        </div>
-                        <div class="post-info flex-row">
-                            <span><i class="fas fa-user text-grey"></i>&nbsp;&nbsp;Admin</span>
-                            <span><i class="fas fa-calendar-alt text-grey"></i>&nbsp;04 Fevereiro 2019</span>
-                            <span><i class="fas fa-comment text-grey"></i>&nbsp;0</span>
-                        </div>
-                    </div>
-                    <div class="post-title">
-                        <a href="#"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, consectetur!</a>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut dolor tenetur expedita hic repellat provident autem nostrum reprehenderit fuga, fugiat, doloribus magnam! Quia iusto praesentium, rem amet provident accusantium aliquam eligendi autem quo facilis commodi totam! Accusantium blanditiis libero dolore?</p>
-                        <button class="btn post-btn">Leia mais &nbsp; <i class="fas fa-arrow-right"></i> </button>
-                    </div>
-                </div><!-- end of  dummy post -->
-
-                <!-- Dummy Post 8 -->
-                <div class="post-content">
-                    <div class="post-image">
-                        <div>
-                            <img src="{% static 'assets/img/Blog-post/blog2.png' %}" class="img" alt="blog1">
-                        </div>
-                        <div class="post-info flex-row">
-                            <span><i class="fas fa-user text-grey"></i>&nbsp;&nbsp;Admin</span>
-                            <span><i class="fas fa-calendar-alt text-grey"></i>&nbsp;03 Fevereiro 2019</span>
-                            <span><i class="fas fa-comment text-grey"></i>&nbsp;1</span>
-                        </div>
-                    </div>
-                    <div class="post-title">
-                        <a href="#"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, consectetur!</a>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut dolor tenetur expedita hic repellat provident autem nostrum reprehenderit fuga, fugiat, doloribus magnam! Quia iusto praesentium, rem amet provident accusantium aliquam eligendi autem quo facilis commodi totam! Accusantium blanditiis libero dolore?</p>
-                        <button class="btn post-btn">Leia mais &nbsp; <i class="fas fa-arrow-right"></i> </button>
-                    </div>
-                </div><!-- end of  dummy post -->
-                {% endcomment %}
             </div>
 
             <!-- Sidebar -->
             {% include "components/sidebar.html" %}
 
             <div class="pagination flex-row">
-                <a href="#"><i class="fas fa-chevron-left"></i></a>
-                <a class="pages" href="#">1</a>
-                <a class="pages" href="#">2</a>
-                <a class="pages" href="#">3</a>
-                <a href="#"><i class="fas fa-chevron-right"></i></a>
+                {% if queryset.has_previous %}
+                <a href="?{{ page_request }}={{ queryset.previous_page_number }}">
+                    <i class="fas fa-chevron-left"></i>
+                </a>
+                {% endif %}
+
+                <a class="pages active" href="#">{{ queryset.number }}</a>
+
+                {% if queryset.has_next %}
+                <a href="?{{ page_request }}={{ queryset.next_page_number }}">
+                    <i class="fas fa-chevron-right"></i>
+                </a>
+                {% endif %}
             </div>
 
         </div>

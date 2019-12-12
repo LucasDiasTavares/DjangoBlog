@@ -336,6 +336,12 @@ main .site-content .post-content .post-title .post-btn {
     color: white;
 }
 
+.site-content .pagination .pages.active {
+    background: var(--light-gray);
+    color: black !important;
+    font-weight: bold !important;
+}
+
 /*SIDEBAR*/
 .site-content>.sidebar .category-list {
     font-family: var(--font-Anton);
