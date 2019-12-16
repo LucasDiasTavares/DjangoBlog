@@ -15,80 +15,7 @@
         </div>
     </section>
 
-    <!-- Carousel Section -->
-    <section>
-        <div class="blog">
-            <div class="container">
-                <div class="owl-carousel owl-theme blog-post">
-                    <!-- Carousel Item -->
-                    <div class="blog-content">
-                        <img src="{% static 'assets/img/Blog-post/post-10.jpg' %}" alt="">
-                        <div class="blog-title">
-                            <h3>Landon Fashion week's continued the evolution</h3>
-                            <button class="btn btn-blog">Fashion</button>
-                        </div>
-                    </div>
-                    <!-- Carousel Item -->
-                    <div class="blog-content">
-                        <img src="{% static 'assets/img/Blog-post/post-1.jpg' %}" alt="">
-                        <div class="blog-title">
-                            <h3>Landon Fashion week's continued the evolution</h3>
-                            <button class="btn btn-blog">Fashion</button>
-                        </div>
-                    </div>
-                    <!-- Carousel Item -->
-                    <div class="blog-content">
-                        <img src="{% static 'assets/img/Blog-post/post-2.jpg' %}" alt="">
-                        <div class="blog-title">
-                            <h3>Landon Fashion week's continued the evolution</h3>
-                            <button class="btn btn-blog">Fashion</button>
-                        </div>
-                    </div>
-                    <!-- Carousel Item -->
-                    <div class="blog-content">
-                        <img src="{% static 'assets/img/Blog-post/post-3.jpg' %}" alt="">
-                        <div class="blog-title">
-                            <h3>Landon Fashion week's continued the evolution</h3>
-                            <button class="btn btn-blog">Fashion</button>
-                        </div>
-                    </div>
-                    <!-- Carousel Item -->
-                    <div class="blog-content">
-                        <img src="{% static 'assets/img/Blog-post/post-4.png' %}" alt="">
-                        <div class="blog-title">
-                            <h3>Landon Fashion week's continued the evolution</h3>
-                            <button class="btn btn-blog">Fashion</button>
-                        </div>
-                    </div>
-                    <!-- Carousel Item -->
-                    <div class="blog-content">
-                        <img src="{% static 'assets/img/Blog-post/post-5.png' %}" alt="">
-                        <div class="blog-title">
-                            <h3>Landon Fashion week's continued the evolution</h3>
-                            <button class="btn btn-blog">Fashion</button>
-                        </div>
-                    </div>
-                    <!-- Carousel Item -->
-                    <div class="blog-content">
-                        <img src="{% static 'assets/img/Blog-post/post-6.png' %}" alt="">
-                        <div class="blog-title">
-                            <h3>Landon Fashion week's continued the evolution</h3>
-                            <button class="btn btn-blog">Fashion</button>
-                        </div>
-                    </div>
-                    <!-- Carousel Item -->
-                    <div class="blog-content">
-                        <img src="{% static 'assets/img/Blog-post/post-7.jpg' %}" alt="">
-                        <div class="blog-title">
-                            <h3>Landon Fashion week's continued the evolution</h3>
-                            <button class="btn btn-blog">Fashion</button>
-                        </div>
-                    </div>
-                </div>
 
-            </div>
-        </div>
-    </section>
 
     <!-- Site content -->
     <section class="container">
@@ -105,7 +32,6 @@
                         <div class="post-info flex-row">
                             <span><i class="fas fa-user text-grey"></i>&nbsp;&nbsp;{{ obj.author }}</span>
                             <span><i class="fas fa-calendar-alt text-grey"></i>&nbsp;{{ obj.timestamp|timesince }} atrás</span>
-                            <span><i class="fas fa-comment text-grey"></i>&nbsp;{{ obj.comment_count }}</span>
                         </div>
                     </div>
                     <div class="post-title">
@@ -124,7 +50,77 @@
                 {% endfor %}
 
             </div>
-            {% include "components/sidebar.html" %}
+            <div class="blog">
+                <div class="container">
+                    <div class="owl-carousel owl-theme blog-post">
+                        <!-- Carousel Item -->
+                        <div class="blog-content">
+                            <img src="{% static 'assets/img/Blog-post/post-10.jpg' %}" alt="">
+                            <div class="blog-title">
+                                <h3>Landon Fashion week's continued the evolution</h3>
+
+                            </div>
+                        </div>
+                        <!-- Carousel Item -->
+                        <div class="blog-content">
+                            <img src="{% static 'assets/img/Blog-post/post-1.jpg' %}" alt="">
+                            <div class="blog-title">
+                                <h3>Landon Fashion week's continued the evolution</h3>
+
+                            </div>
+                        </div>
+                        <!-- Carousel Item -->
+                        <div class="blog-content">
+                            <img src="{% static 'assets/img/Blog-post/post-2.jpg' %}" alt="">
+                            <div class="blog-title">
+                                <h3>Landon Fashion week's continued the evolution</h3>
+
+                            </div>
+                        </div>
+                        <!-- Carousel Item -->
+                        <div class="blog-content">
+                            <img src="{% static 'assets/img/Blog-post/post-3.jpg' %}" alt="">
+                            <div class="blog-title">
+                                <h3>Landon Fashion week's continued the evolution</h3>
+
+                            </div>
+                        </div>
+                        <!-- Carousel Item -->
+                        <div class="blog-content">
+                            <img src="{% static 'assets/img/Blog-post/post-4.png' %}" alt="">
+                            <div class="blog-title">
+                                <h3>Landon Fashion week's continued the evolution</h3>
+
+                            </div>
+                        </div>
+                        <!-- Carousel Item -->
+                        <div class="blog-content">
+                            <img src="{% static 'assets/img/Blog-post/post-5.png' %}" alt="">
+                            <div class="blog-title">
+                                <h3>Landon Fashion week's continued the evolution</h3>
+
+                            </div>
+                        </div>
+                        <!-- Carousel Item -->
+                        <div class="blog-content">
+                            <img src="{% static 'assets/img/Blog-post/post-6.png' %}" alt="">
+                            <div class="blog-title">
+                                <h3>Landon Fashion week's continued the evolution</h3>
+
+                            </div>
+                        </div>
+                        <!-- Carousel Item -->
+                        <div class="blog-content">
+                            <img src="{% static 'assets/img/Blog-post/post-7.jpg' %}" alt="">
+                            <div class="blog-title">
+                                <h3>Landon Fashion week's continued the evolution</h3>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
         </div>
     </section>
 </main>

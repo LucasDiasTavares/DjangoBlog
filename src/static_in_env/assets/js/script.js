@@ -6,15 +6,15 @@ const responsive = {
     },
     // breakpoint from 560 up
     560: {
-        items: 2
+        items: 1
     },
     // breakpoint from 960 up
     960: {
-        items: 3
+        items: 1
     },
     // breakpoint from 1200 up
     1200: {
-        items: 4
+        items: 1
     }
 }
 
