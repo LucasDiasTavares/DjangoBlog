@@ -15,14 +15,12 @@
         </div>
     </section>
 
-
-
     <!-- Site content -->
     <section class="container">
         <div class="site-content">
             <!-- POSTS -->
             <div class="posts">
-                <!-- Dummy Post 1 -->
+                <!-- Post -->
                 {% for obj in latest %}
                 <div class="post-content">
                     <div class="post-image">
@@ -43,16 +41,18 @@
                             </a>
                             {% endfor %}
                         </div>
-                        <p class="display">{{ obj.overview }}</p>
+                        <p class="display">{{ obj.overview|truncatechars:300 }}</p>
                         <button class="btn post-btn">Leia mais &nbsp; <i class="fas fa-arrow-right"></i> </button>
                     </div>
                 </div><!-- end of post -->
                 {% endfor %}
-
             </div>
+
+            <!-- Owl Carousel -->
             <div class="blog">
                 <div class="container">
                     <div class="owl-carousel owl-theme blog-post">
+
                         <!-- Carousel Item -->
                         <div class="blog-content">
                             <img src="{% static 'assets/img/Blog-post/post-10.jpg' %}" alt="">
@@ -61,6 +61,7 @@
 
                             </div>
                         </div>
+
                         <!-- Carousel Item -->
                         <div class="blog-content">
                             <img src="{% static 'assets/img/Blog-post/post-1.jpg' %}" alt="">
