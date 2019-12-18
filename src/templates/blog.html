@@ -32,7 +32,7 @@
                             </a>
                             {% endfor %}
                         </div>
-                        <p>{{ post.overview }}</p>
+                        <p>{{ post.overview|truncatechars:100 }}</p>
                         <a href="{{ post.get_absolute_url }}" class="btn post-btn">Leia mais &nbsp; <i class="fas fa-arrow-right"></i> </a>
                     </div>
                 </div><!-- end of post -->
@@ -69,6 +69,7 @@
                                 </div>
                                 <div class="post-info flex-row">
                                     <span><i class="fas fa-user text-grey"></i>&nbsp;&nbsp;{{ post.author }}</span>
+                                    <span><i class="fas fa-calendar-alt text-grey"></i>&nbsp;{{ post.timestamp|timesince }} atrás</span>
                                 </div>
                             </div>
                             <div class="post-title">

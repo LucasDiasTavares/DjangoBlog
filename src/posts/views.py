@@ -12,6 +12,12 @@ def get_category_count():
     return queryset
 
 
+def get_most_recent_four_posts():
+    # Method to get the most recent 4 posts
+    most_recent = Post.objects.order_by('-timestamp')[0:4]
+    return most_recent
+
+
 def search(request):
     # Grab all of my posts
     queryset = Post.objects.all()
@@ -48,13 +54,11 @@ def index(request):
 
 
 def blog(request):
-    category_count = get_category_count()
-
     # Grab all posts and orderby negative timestamp
     post_list = Post.objects.all().order_by('-timestamp')
 
-    # latest posts
-    most_recent = Post.objects.order_by('-timestamp')[0:4]
+    category_count = get_category_count()
+    most_recent = get_most_recent_four_posts()
 
     # Pagination
     paginator = Paginator(post_list, 8)
@@ -80,8 +84,13 @@ def blog(request):
 def post(request, id):
     post = get_object_or_404(Post, id=id)
 
+    category_count = get_category_count()
+    most_recent = get_most_recent_four_posts()
+
     context = {
-        'post': post
+        'post': post,
+        'most_recent': most_recent,
+        'category_count': category_count
     }
 
     return render(request, 'post.html', context)
