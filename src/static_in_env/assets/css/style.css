@@ -700,8 +700,6 @@ main .site-content .postpage .post-title p {
 
 /*-- Post (Single Post) --*/
 
-
-
 main .container .site-content .singlepostpage>div {
     padding-bottom: 0.8rem;
 }
@@ -718,8 +716,12 @@ main .site-content .singlepostpage .post-title a {
     font-size: 1.1rem;
 }
 
-main .site-content .singlepostpage .post-title p {
-    font-size: 0.9rem;
+main .site-content .singlepostpage .post-title .post-body img {
+    width: 100% !important;
+}
+
+main .site-content .singlepostpage .post-title .post-body p span img {
+    width: 23px !important;
 }
 
 /*PAGINATION*/
