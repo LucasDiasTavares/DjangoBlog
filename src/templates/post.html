@@ -36,16 +36,22 @@
                 </div><!-- end of  dummy post -->
                 <div class="post-suggested"><span>Posts sugeridos</span></div>
                 <div class="next-previus-post flex-row">
+                    {% if post.previous_post %}
                     <div class="post-title flex-row">
-
-                        <a href="#">
+                        <a href="{{ post.previous_post.get_absolute_url }}">
                             <i class="fas fa-chevron-left"></i>
-                            <span>67 caracteres contando com os espaços, é o tamanho máximo permitido!!!!!!!!!!</span>
+                            <span>{{ post.previous_post.title|truncatechars:30  }}</span>
                         </a>
                     </div>
+                    {% endif %}
+                    {% if post.next_post %}
                     <div class="post-title flex-row">
-                        <a href="#"><span>67 caracteres contando com os espaços, é o tamanho máximo permitido!!!!!!!!!!</span><i class="fas fa-chevron-right"></i></a>
+                        <a href="{{ post.next_post.get_absolute_url }}">
+                            <span>{{ post.next_post.title|truncatechars:30 }}</span>
+                            <i class="fas fa-chevron-right"></i>
+                        </a>
                     </div>
+                    {% endif %}
                 </div>
             </div>
 
