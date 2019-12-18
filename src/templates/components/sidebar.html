@@ -47,7 +47,7 @@
         <ul class="category-list">
             {% for cat in category_count %}
             <li class="list-items">
-                <a href="#">{{ cat.categories__title }}</a>
+                <a href="http://localhost:8000/seach/?q={{ cat.categories__title  }}">{{ cat.categories__title }}</a>
                 <span>({{ cat.categories__title__count }})</span>
             </li>
             {% endfor %}

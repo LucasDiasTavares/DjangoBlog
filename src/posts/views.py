@@ -14,7 +14,7 @@ def get_category_count():
 
 def get_most_recent_four_posts():
     # Method to get the most recent 4 posts
-    most_recent = Post.objects.order_by('-timestamp')[0:3]
+    most_recent = Post.objects.order_by('-timestamp')[0:4]
     return most_recent
 
 
@@ -27,7 +27,7 @@ def search(request):
         queryset = queryset.filter(
             # Filter by title or overview, you can put as many fields you want
             Q(title__icontains=query) |
-            Q(overview__icontains=query)
+            Q(categories__title__icontains=query)
         ).distinct()
     context = {
         'queryset': queryset
@@ -61,7 +61,7 @@ def blog(request):
     most_recent = get_most_recent_four_posts()
 
     # Pagination
-    paginator = Paginator(post_list, 8)
+    paginator = Paginator(post_list, 6)
     page_request = 'page'
     page = request.GET.get(page_request)
     try:

@@ -24,15 +24,15 @@
                         </div>
                     </div>
                     <div class="post-title">
-                        <a href="{{ post.get_absolute_url }}"> {{ post.title }} </a>
+                        <a class="title" href="{{ post.get_absolute_url }}"> {{ post.title }} </a>
                         <div class="tags flex-row">
                             {% for cat in post.categories.all %}
-                            <a href="#">
+                            <a href="http://localhost:8000/seach/?q={{ cat.title }}">
                                 <span class="tag">{{ cat.title }}</span>
                             </a>
                             {% endfor %}
                         </div>
-                        <p>{{ post.overview|truncatechars:100 }}</p>
+                        <p class="mb-2">{{ post.overview|truncatechars:100 }}</p>
                         <a href="{{ post.get_absolute_url }}" class="btn post-btn">Leia mais &nbsp; <i class="fas fa-arrow-right"></i> </a>
                     </div>
                 </div><!-- end of post -->

@@ -21,7 +21,7 @@
                         </div>
                     </div>
                     <div class="post-title">
-                        <a href="#">{{ post.title }}</a>
+                        <a class="mb-2" href="#">{{ post.title }}</a>
                         <div class="tags flex-row">
                             {% for cat in post.categories.all %}
                             <a href="#">
@@ -37,7 +37,7 @@
                 <div class="post-suggested"><span>Posts sugeridos</span></div>
                 <div class="next-previus-post flex-row">
                     {% if post.previous_post %}
-                    <div class="post-title flex-row">
+                    <div class="post-title flex-row mb-2">
                         <a href="{{ post.previous_post.get_absolute_url }}">
                             <i class="fas fa-chevron-left"></i>
                             <span>{{ post.previous_post.title|truncatechars:30  }}</span>
