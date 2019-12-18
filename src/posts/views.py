@@ -14,7 +14,7 @@ def get_category_count():
 
 def get_most_recent_four_posts():
     # Method to get the most recent 4 posts
-    most_recent = Post.objects.order_by('-timestamp')[0:4]
+    most_recent = Post.objects.order_by('-timestamp')[0:3]
     return most_recent
 
 

@@ -1,43 +1,57 @@
 {% load static %}
 <!-- Asidebar -->
 <aside class="sidebar">
-    <!-- Popular Posts -->
+    <!-- Seach field -->
+    <div>
+        <h2>Procure no blog</h2>
+        <div class="flex-row">
+            <form action="{% url 'search' %}" class="search-form">
+                <div class="form-group">
+                    <input type="text" name="q" placeholder="O que você está procurando?">
+                    <i class="fas fa-search"></i>
+                    <!-- <button type="submit" class="submit"><i class="fas fa-search"></i></button> -->
+                </div>
+            </form>
+        </div>
+    </div>
+
     <div class="popular-post">
-        <h2>Popular Posts</h2>
-        <!-- Dummy Pupular Post 1 -->
-        <div class="post-content">
-            <div class="post-image">
-                <div>
-                    <img src="{{ post.thumbnail.url }}" class="img" alt="popular-post">
+        <h2>Ultimos Posts</h2>
+        <!-- Latest Post -->
+        {% for post in most_recent %}
+        <div>
+            <div class="post-content">
+                <div class="post-image">
+                    <div>
+                        <a href="{{ post.get_absolute_url }}">
+                            <img src="{{ post.thumbnail.url }}" class="img" alt="popular-post">
+                        </a>
+                    </div>
+                    <div class="post-info flex-row">
+                        <span><i class="fas fa-user text-grey"></i>&nbsp;&nbsp;{{ post.author }}</span>
+                        <span><i class="fas fa-calendar-alt text-grey"></i>&nbsp;{{ post.timestamp|timesince }} atrás</span>
+                    </div>
                 </div>
-                <div class="post-info flex-row">
-                    <span><i class="fas fa-user text-grey"></i>&nbsp;&nbsp;Admin</span>
-                    <span><i class="fas fa-comment text-grey"></i>&nbsp;&nbsp;7589</span>
+                <div class="post-title">
+                    <a href="{{ post.get_absolute_url }}">{{post.title}}</a>
                 </div>
             </div>
-            <div class="post-title">
-                <a href="#"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, consectetur!</a>
-            </div>
-        </div><!-- end of dummy popular post -->
+            </a>
+        </div><!-- End of Latest Post -->
+        {% endfor %}
     </div>
 
     <!-- Categories -->
     <div class="category">
         <h2>Cetegorias</h2>
         <ul class="category-list">
+            {% for cat in category_count %}
             <li class="list-items">
-                <a href="#">Python</a>
-                <span>(50)</span>
+                <a href="#">{{ cat.categories__title }}</a>
+                <span>({{ cat.categories__title__count }})</span>
             </li>
+            {% endfor %}
         </ul>
-    </div>
-
-    <!-- Popular Tags -->
-    <div class="popular-tags">
-        <h2>Popular Tags</h2>
-        <div class="tags flex-row">
-            <span class="tag">Python</span>
-        </div>
     </div>
 
 </aside>
