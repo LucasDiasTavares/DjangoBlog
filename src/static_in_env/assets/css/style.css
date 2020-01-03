@@ -91,6 +91,29 @@ span {
     margin-bottom: 2rem !important;
 }
 
+.mb-4 {
+    margin-bottom: 4rem !important;
+}
+
+.mt-2 {
+    margin-top: 2rem !important;
+}
+
+.mt-4 {
+    margin-top: 4rem !important;
+}
+
+.my-2 {
+    margin-top: 2rem !important;
+    margin-bottom: 2rem !important;
+}
+
+.my-4 {
+    margin-top: 4rem !important;
+    margin-bottom: 4rem !important;
+}
+
+
 /* Navbar */
 .nav {
     background: wheat;
@@ -784,6 +807,10 @@ main .site-content .singlepostpage .post-title .post-body p span img {
     margin-bottom: 2rem;
 }
 
+
+#comentary-form label {
+    display: none;
+}
 
 /* max 330px extra-smallsmartphones */
 @media only screen and (max-width: 330px) {
