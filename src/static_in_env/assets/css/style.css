@@ -87,6 +87,10 @@ span {
     color: var(--light-gray);
 }
 
+.text-red {
+    color: var(--light-red);
+}
+
 .mb-2 {
     margin-bottom: 2rem !important;
 }

@@ -55,44 +55,33 @@
                 </div>
                 <div id="comentary">
                     <div class="container">
-                        <h3>Comentarios(3)</h3>
-                    </div>
-                    <div class="comentary">
-                        <div>
-                            <span><i class="fas fa-user text-grey"></i>&nbsp;&nbsp;{{ post.author }}</span>
-                        </div>
-                        <div>
-                            <span><i class="fas fa-calendar-alt text-grey"></i>&nbsp;{{ post.timestamp|date|lower }}</span>
-                        </div>
-                        <div>
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque exercitationem corrupti odio commodi consequuntur eum, velit veniam magnam consequatur.</p>
-                        </div>
+                        <h3>Comentarios ({{ post.comments.count }})</h3>
                     </div>
 
+                    {% for comment in post.get_comments %}
                     <div class="comentary">
                         <div>
-                            <span><i class="fas fa-user text-grey"></i>&nbsp;&nbsp;{{ post.author }}</span>
+                            <span>
+                                <!--  Can be a image if I want... maybe one day I change it
+                                <img src="{{ comment.user.author.profile_picture.url }}" alt="..." class=""> -->
+                                <i class="fas fa-user text-red"></i>
+                                &nbsp;&nbsp;{{ comment.user.username }}
+                            </span>
                         </div>
                         <div>
-                            <span><i class="fas fa-calendar-alt text-grey"></i>&nbsp;{{ post.timestamp|date|lower }}</span>
+                            <span>
+                                <i class="fas fa-calendar-alt text-grey"></i>
+                                &nbsp;{{ comment.timestamp|date|lower }}
+                            </span>
                         </div>
                         <div>
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque exercitationem corrupti odio commodi consequuntur eum, velit veniam magnam consequatur.</p>
+                            <p>{{ comment.content }}</p>
                         </div>
                     </div>
+                    {% endfor %}
 
-                    <div class="comentary">
-                        <div>
-                            <span><i class="fas fa-user text-grey"></i>&nbsp;&nbsp;{{ post.author }}</span>
-                        </div>
-                        <div>
-                            <span><i class="fas fa-calendar-alt text-grey"></i>&nbsp;{{ post.timestamp|date|lower }}</span>
-                        </div>
-                        <div>
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque exercitationem corrupti odio commodi consequuntur eum, velit veniam magnam consequatur.</p>
-                        </div>
-                    </div>
 
+                    {% if request.user.is_authenticated %}
                     <div>
                         <form method="POST" action=".">
                             {% csrf_token %}
@@ -107,6 +96,7 @@
                             </div>
                         </form>
                     </div>
+                    {% endif %}
 
                 </div>
             </div>
