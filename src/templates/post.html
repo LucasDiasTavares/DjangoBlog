@@ -37,7 +37,7 @@
                 <div class="post-suggested"><span>Posts sugeridos</span></div>
                 <div class="next-previus-post flex-row">
                     {% if post.previous_post %}
-                    <div class="post-title flex-row mb-2">
+                    <div class="post-title flex-row">
                         <a href="{{ post.previous_post.get_absolute_url }}">
                             <i class="fas fa-chevron-left"></i>
                             <span>{{ post.previous_post.title|truncatechars:30  }}</span>
@@ -53,7 +53,49 @@
                     </div>
                     {% endif %}
                 </div>
+                <div id="comentary">
+                    <div class="container">
+                        <h3>Comentarios(3)</h3>
+                    </div>
+                    <div class="comentary">
+                        <div>
+                            <span><i class="fas fa-user text-grey"></i>&nbsp;&nbsp;{{ post.author }}</span>
+                        </div>
+                        <div>
+                            <span><i class="fas fa-calendar-alt text-grey"></i>&nbsp;{{ post.timestamp|date|lower }}</span>
+                        </div>
+                        <div>
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque exercitationem corrupti odio commodi consequuntur eum, velit veniam magnam consequatur.</p>
+                        </div>
+                    </div>
+
+                    <div class="comentary">
+                        <div>
+                            <span><i class="fas fa-user text-grey"></i>&nbsp;&nbsp;{{ post.author }}</span>
+                        </div>
+                        <div>
+                            <span><i class="fas fa-calendar-alt text-grey"></i>&nbsp;{{ post.timestamp|date|lower }}</span>
+                        </div>
+                        <div>
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque exercitationem corrupti odio commodi consequuntur eum, velit veniam magnam consequatur.</p>
+                        </div>
+                    </div>
+
+                    <div class="comentary">
+                        <div>
+                            <span><i class="fas fa-user text-grey"></i>&nbsp;&nbsp;{{ post.author }}</span>
+                        </div>
+                        <div>
+                            <span><i class="fas fa-calendar-alt text-grey"></i>&nbsp;{{ post.timestamp|date|lower }}</span>
+                        </div>
+                        <div>
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque exercitationem corrupti odio commodi consequuntur eum, velit veniam magnam consequatur.</p>
+                        </div>
+                    </div>
+
+                </div>
             </div>
+
 
             {% include 'components/sidebar.html' with most_recent=most_recent category_count=category_count %}
 
@@ -61,5 +103,6 @@
 
         </div>
     </section>
+
 </main>
 {% endblock content %}

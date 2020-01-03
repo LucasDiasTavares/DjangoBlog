@@ -748,7 +748,7 @@ main .site-content .singlepostpage .post-title .post-body p span img {
 .site-content .next-previus-post {
     justify-content: center;
     color: black;
-    margin: 4rem 0;
+    margin: 2rem 0;
 }
 
 .site-content .next-previus-post a {
@@ -773,6 +773,19 @@ main .site-content .singlepostpage .post-title .post-body p span img {
 .site-content .next-previus-post a span {
     margin: 1rem 1rem;
 }
+
+/* Comentary */
+#comentary .comentary {
+    border: 1px #ccc solid;
+    padding: 0.75rem 1rem;
+    margin-bottom: 2rem;
+}
+
+#comentary .container h3 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
 
 /* max 330px extra-smallsmartphones */
 @media only screen and (max-width: 330px) {
