@@ -2,7 +2,6 @@ from django.db import models
 from django.contrib.auth import get_user_model
 from django.urls import reverse
 
-from ckeditor.fields import RichTextField
 from ckeditor_uploader.fields import RichTextUploadingField
 
 User = get_user_model()
@@ -43,6 +42,16 @@ class Post(models.Model):
 
     def get_absolute_url(self):
         return reverse('post-detail', kwargs={
+            'id': self.id
+        })
+
+    def get_update_url(self):
+        return reverse('post-update', kwargs={
+            'id': self.id
+        })
+
+    def get_delete_url(self):
+        return reverse('post-delete', kwargs={
             'id': self.id
         })
 

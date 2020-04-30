@@ -1,11 +1,18 @@
 from django.db.models import Count, Q
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.shortcuts import render, get_object_or_404, redirect, reverse
-from .forms import CommentForm
-from .models import Post
+from .forms import CommentForm, PostForm
+from .models import Post, Author
 
 
 # Methods
+def get_user_author(user):
+    qs = Author.objects.filter(user=user)
+    if qs.exists():
+        return qs[0]
+    return None
+
+
 def get_category_count():
     # Method to see the name and count of every category
     queryset = Post.objects.values(
@@ -105,3 +112,28 @@ def post(request, id):
     }
 
     return render(request, 'post.html', context)
+
+
+def post_create(request):
+    form = PostForm(request.POST or None, request.FILES or None)
+    author = get_user_author(request.user)
+    if request.method == 'POST':
+        if form.is_valid():
+            form.instance.author = author
+            form.save()
+            return redirect(reverse("post-detail", kwargs={
+                'id': form.instance.id
+            }))
+    context = {
+        'form': form
+    }
+
+    return render(request, "post-create.html", context)
+
+
+def post_update(request, id):
+    pass
+
+
+def post_delete(request, id):
+    pass

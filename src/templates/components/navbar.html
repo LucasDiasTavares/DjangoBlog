@@ -17,12 +17,11 @@
                 <li class="nav-link">
                     <a href="/blog">Blog</a>
                 </li>
+                {% if request.user.is_staff %}
                 <li class="nav-link">
-                    <a href="/post/1/">Post</a>
+                    <a href="{% url 'post-create' %}">Criar Post</a>
                 </li>
-                <li class="nav-link">
-                    <a href="#">Contato</a>
-                </li>
+                {% endif %}
             </ul>
         </div>
         <div class="social text-grey">

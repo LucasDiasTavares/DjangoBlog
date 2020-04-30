@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- Main content -->
+<main>
+    <div class="body-form">
+        <div class="form">
+            <form method="POST" action="." enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.media }}
+            {% for field in form %}
+                <div class="field">
+                    <label for="{{ field.id_for_label }}"
+                           class="label-name">
+                        <span>{{ field.label }}</span>
+                    </label>
+                    {{ field }}
+                </div>
+            {% endfor %}
+             <button class="mt-4" type="submit">Salvar</button>
+        </form>
+        </div>
+    </div>
+
+</main>
+{% endblock content %}

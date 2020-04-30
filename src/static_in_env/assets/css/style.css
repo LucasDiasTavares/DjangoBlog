@@ -339,14 +339,14 @@ main .site-content .post-title .tags {
 
 main .site-content .post-title .tags .tag {
     background: var(--light-gradient);
-    padding: 0.4rem 1rem;
+    padding: 0.4rem 0.5rem;
     border-radius: 3rem;
     font-family: var(--font-Roboto);
     font-weight: bold;
     color: var(--light-gray);
     margin-top: 1rem;
-    font-size: 1rem;
-}
+    font-size: 0.8rem;
+    }
 
 main .site-content .post-content .post-title .post-btn {
     border-radius: 0;
@@ -843,5 +843,32 @@ main .site-content .singlepostpage .post-title .post-body p span img {
     .site-content .next-previus-post a span {
         font-size: 0.8rem;
     }
+}
 
+/* form */
+.body-form{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 3rem;
+    width: 100%;
+}
+
+.input{
+    border: solid 1px #ccc;
+    width: 100%;
+    }
+
+.label-name{
+    display: flex;
+    padding: 2rem 0 ;
+}
+
+.overview-text-area{
+    width: 100%;
+}
+
+.content-name{
 }
