@@ -13,3 +13,4 @@ static_root
 *.jpg
 *.gif
 *.jpeg
+.env
