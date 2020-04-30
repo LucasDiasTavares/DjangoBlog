@@ -29,6 +29,14 @@
                             </a>
                             {% endfor %}
                         </div>
+                        <div>
+                            <a href="{% url 'post-update' id=post.id %}">
+                                <span class="btn-update">Atualizar</span>
+                            </a>
+                            <a href="{% url 'post-delete' id=post.id %}">
+                                <span class="btn-delete">Deletar</span>
+                            </a>
+                        </div>
                         <div class="post-body">
                             {{ post.content| safe}}
                         </div>

@@ -799,6 +799,24 @@ main .site-content .singlepostpage .post-title .post-body p span img {
     margin: 1rem 1rem;
 }
 
+.btn-update{
+    background: #cccc06;
+    color: white;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    margin-left: 1rem;
+    font-weight: bold;
+}
+
+.btn-delete{
+    background: #f00a0a;
+    color: white;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    margin-left: 1rem;
+    font-weight: bold;
+}
+
 /* Comentary */
 #comentary .comentary {
     border: 1px #ccc solid;
@@ -868,7 +886,4 @@ main .site-content .singlepostpage .post-title .post-body p span img {
 
 .overview-text-area{
     width: 100%;
-}
-
-.content-name{
 }
