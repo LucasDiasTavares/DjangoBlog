@@ -38,7 +38,8 @@ def search(request):
             Q(categories__title__icontains=query)
         ).distinct()
     context = {
-        'queryset': queryset
+        'queryset': queryset,
+        'qslength': len(queryset)
     }
 
     return render(request, 'search_results.html', context)

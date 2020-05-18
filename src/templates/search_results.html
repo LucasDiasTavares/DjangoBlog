@@ -5,14 +5,24 @@
 {% block content %}
 
 <div class="container">
-    <h2>Resultado da pesquisa</h2>
-    <ul>
-        {% for post in queryset %}
-        <li>
-            <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
-        </li>
-        {% endfor %}
-    </ul>
+    <div class="search-results">
+        <h2>Resultado da pesquisa</h2>
+        <div class="search-list">
+            {% if qslength == 0 %}
+                <span>
+                    Nenhum resultado encontrado, deseja
+                </span>
+                <a href="http://127.0.0.1:8000/blog/">voltar?</a>
+            {% endif %}
+            <ul>
+                {% for post in queryset %}
+                <li>
+                    <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
 </div>
 
 {% endblock content %}

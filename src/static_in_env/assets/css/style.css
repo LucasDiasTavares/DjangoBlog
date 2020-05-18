@@ -488,6 +488,15 @@ input {
     }
 }
 
+/* SEARCH PAGE*/
+.container .search-results .search-list ul{
+    padding: 0;
+}
+.container .search-results .search-list ul li{
+    padding-bottom: 1rem;
+    font-family: var(--font-Anton)
+}
+
 /*NEWSLETTER*/
 
 .site-content .sidebar .newsletter {
