@@ -1,15 +1,12 @@
 {% load static %}
-<!-- Asidebar -->
 <aside class="sidebar">
-    <!-- Seach field -->
-    <div>
+    <div class="mb-4 search-field">
         <h2>Procure no blog</h2>
         <div class="flex-row">
             <form action="{% url 'search' %}" class="search-form">
                 <div class="form-group">
                     <input type="text" name="q" placeholder="O que você está procurando?">
                     <i class="fas fa-search"></i>
-                    <!-- <button type="submit" class="submit"><i class="fas fa-search"></i></button> -->
                 </div>
             </form>
         </div>
@@ -17,10 +14,10 @@
 
     <div class="popular-post">
         <h2>Ultimos Posts</h2>
-        <!-- Latest Post -->
         {% for post in most_recent %}
         <div>
             <div class="post-content">
+                <!-- show image on sidebar
                 <div class="post-image">
                     <div>
                         <a href="{{ post.get_absolute_url }}">
@@ -32,18 +29,18 @@
                         <span><i class="fas fa-calendar-alt text-grey"></i>&nbsp;{{ post.timestamp|timesince }} atrás</span>
                     </div>
                 </div>
+                -->
                 <div class="post-title">
                     <a href="{{ post.get_absolute_url }}">{{post.title}}</a>
                 </div>
             </div>
             </a>
-        </div><!-- End of Latest Post -->
+        </div>
         {% endfor %}
     </div>
 
-    <!-- Categories -->
     <div class="category">
-        <h2>Cetegorias</h2>
+        <h2>Categorias</h2>
         <ul class="category-list">
             {% for cat in category_count %}
             <li class="list-items">

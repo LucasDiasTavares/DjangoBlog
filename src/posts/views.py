@@ -20,9 +20,9 @@ def get_category_count():
     return queryset
 
 
-def get_most_recent_four_posts():
-    # Method to get the most recent 4 posts
-    most_recent = Post.objects.order_by('-timestamp')[0:4]
+def get_most_recent_posts():
+    # Method to get the most recent posts
+    most_recent = Post.objects.order_by('-timestamp')[0:10]
     return most_recent
 
 
@@ -66,7 +66,7 @@ def blog(request):
     post_list = Post.objects.all().order_by('-timestamp')
 
     category_count = get_category_count()
-    most_recent = get_most_recent_four_posts()
+    most_recent = get_most_recent_posts()
 
     # Pagination
     paginator = Paginator(post_list, 6)
@@ -93,7 +93,7 @@ def post(request, id):
     post = get_object_or_404(Post, id=id)
 
     category_count = get_category_count()
-    most_recent = get_most_recent_four_posts()
+    most_recent = get_most_recent_posts()
     form = CommentForm(request.POST or None)
     if request.method == "POST":
         if form.is_valid():
