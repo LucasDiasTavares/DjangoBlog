@@ -16,7 +16,7 @@ body {
     --light-red: #e83633;
     --light-yellow: #efea45;
     --light-cyan: #6f968f;
-    --light-green: #b9d689;
+    --light-green: #65d771;
     --black: #0e0e0e;
     --light-gradient: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
     --border: solid 1px #ccc;
@@ -79,6 +79,7 @@ h3 {
     font-family: var(--font-Roboto);
     cursor: pointer;
     color: var(--black);
+    border: solid 1x #ccc;
 }
 
 span {
@@ -1024,4 +1025,17 @@ main .site-content .singlepostpage .post-title .post-body p span img {
 
 .open {
     display: block;
+}
+
+/* ACCOUNT */
+
+.account input {
+    border: solid 1px #ccc;
+    padding: 0.3rem;
+    border-radius: 0.5rem;
+}
+
+.account button {
+    margin-bottom: 2rem;
+    margin-left: 0 !important;
 }

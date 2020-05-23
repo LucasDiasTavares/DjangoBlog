@@ -102,6 +102,8 @@
                             </div>
                         </form>
                     </div>
+                    {% else %}
+                        <a href="{% url 'account_login' %}" class="btn-cancel">Entrar para comentar</a>
                     {% endif %}
 
                 </div>

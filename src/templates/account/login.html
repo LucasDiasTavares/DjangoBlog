@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+<div class="container">
+
+    <h1>Entrar</h1>
+    <form class="account" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn-cancel">Entrar</button>
+    </form>
+
+</div>
+{% endblock content %}

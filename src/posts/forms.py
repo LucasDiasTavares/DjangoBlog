@@ -3,6 +3,7 @@ from .models import Post, Comment
 
 
 class CommentForm(forms.ModelForm):
+
     content = forms.CharField(
         widget=forms.Textarea(attrs={
             'class': 'form-control',
@@ -20,18 +21,20 @@ class CommentForm(forms.ModelForm):
 
 
 class PostForm(forms.ModelForm):
+
     def __init__(self, *args, **kwargs):
         super(PostForm, self).__init__(*args, **kwargs)
         self.fields['content'].label = "Conteúdo"
         self.fields['categories'].label = "Categorias"
-        self.fields['previous_post'].label = "Próxima postagem"
-        self.fields['next_post'].label = "Postagem anterior"
+        self.fields['previous_post'].label = "Próximo artigo"
+        self.fields['next_post'].label = "Artigo anterior"
 
     title = forms.CharField(label="Título", widget=forms.TextInput(
         attrs={'class': 'input',
                'placeholder': 'Digite o título aqui'
                })
         )
+
     overview = forms.CharField(label="Descrição", widget=forms.Textarea(
         attrs={
             'class': 'overview-text-area',
@@ -39,6 +42,7 @@ class PostForm(forms.ModelForm):
             'cols': '100',
         })
     )
+
     thumbnail = forms.ImageField(label="Imagem")
 
     class Meta:

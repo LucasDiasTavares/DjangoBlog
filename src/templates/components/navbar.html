@@ -19,16 +19,19 @@
                 </li>
                 {% if request.user.is_staff %}
                 <li class="nav-link">
-                    <a href="{% url 'post-create' %}">Criar Post</a>
+                    <a href="{% url 'post-create' %}">Criar Artigo</a>
                 </li>
                 {% endif %}
                 {% if request.user.is_authenticated %}
                 <li class="nav-link">
-                    <a href="#">Logout</a>
+                    <a href="{% url 'account_logout' %}">Sair</a>
                 </li>
                 {% else %}
                 <li class="nav-link">
-                    <a href="#">Login</a>
+                    <a href="{% url 'account_login' %}">Entrar</a>
+                </li>
+                <li class="nav-link">
+                    <a href="{% url 'account_signup' %}">Cadastrar</a>
                 </li>
                 {% endif %}
             </ul>

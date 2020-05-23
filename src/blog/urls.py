@@ -7,7 +7,7 @@ from posts.views import index, blog, post, search, post_create , post_update, po
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', index),
+    path('', index, name='home'),
     path('blog/', blog, name='post-list'),
     path('seach/', search, name='search'),
     path('post/<id>/', post, name='post-detail'),
@@ -15,6 +15,7 @@ urlpatterns = [
     path('post-update/<id>/', post_update, name='post-update'),
     path('post-delete/<id>/', post_delete, name='post-delete'),
     path('ckeditor/', include('ckeditor_uploader.urls')),
+    path('accounts/', include('allauth.urls'))
 ]
 
 if settings.DEBUG:

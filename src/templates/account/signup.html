@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+<div class="container">
+
+    <h1>Cadastrar</h1>
+    <span> Já tem uma conta? Por favor <a href="{% url 'account_login' %}">entre</a>.</span>
+    <form class="signup account" method="post" action="{% url 'account_signup' %}">
+      {% csrf_token %}
+      {{ form.as_p }}
+      {% if redirect_field_value %}
+      <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+      {% endif %}
+      <button class="btn-cancel" type="submit">Cadastrar</button>
+    </form>
+
+</div>
+{% endblock content %}
