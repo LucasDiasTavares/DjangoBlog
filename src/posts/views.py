@@ -92,7 +92,7 @@ def blog(request):
 
 def post(request, id):
     post = get_object_or_404(Post, id=id)
-
+    author = post.author.user.username
     category_count = get_category_count()
     most_recent = get_most_recent_posts()
     form = CommentForm(request.POST or None)
@@ -109,7 +109,8 @@ def post(request, id):
         'post': post,
         'most_recent': most_recent,
         'category_count': category_count,
-        'form': form
+        'form': form,
+        'author': author
     }
 
     return render(request, 'post.html', context)

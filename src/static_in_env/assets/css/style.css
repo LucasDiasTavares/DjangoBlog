@@ -135,7 +135,7 @@ main {
     background: wheat;
     padding: 0 2rem;
     height: 0rem;
-    min-height: 10vh;
+    min-height: 70px;
     overflow: hidden;
     transition: height 1s ease-in-out;
 }
@@ -769,9 +769,15 @@ main .site-content .postpage .post-title .title {
     padding: 0 !important;
 }
 
-
 main .site-content .postpage .post-title p {
     font-size: 0.9rem;
+}
+
+/* min 1368 big screens*/
+@media only screen and (min-width: 1368px) {
+    main .container .site-content .postpage>div {
+        padding-bottom: 7rem;
+    }
 }
 
 /* max 768px medium smartphones/tablets */
@@ -816,12 +822,13 @@ main .site-content .singlepostpage .post-content>.post-image .post-info {
     margin-left: 7%;
 }
 
-main .site-content .singlepostpage .post-title a {
-    font-size: 1.1rem;
+main .site-content .singlepostpage .post-content> .post-image .img{
+    max-height: 75vh;
 }
 
-main .site-content .singlepostpage .post-title .post-body img {
-    width: 100% !important;
+
+main .site-content .singlepostpage .post-title a {
+    font-size: 1.1rem;
 }
 
 main .site-content .singlepostpage .post-title .post-body p span img {
@@ -858,22 +865,40 @@ main .site-content .singlepostpage .post-title .post-body p span img {
     margin: 1rem 1rem;
 }
 
-.btn-update{
+.btn-update {
     background: #cccc06;
     color: white;
     border-radius: 0.5rem;
     padding: 0.5rem;
     margin-left: 1rem;
     font-weight: bold;
+    border: none;
+    font-size: 0.9rem;
+    cursor: pointer;
 }
 
-.btn-delete{
+.btn-delete {
     background: #f00a0a;
     color: white;
     border-radius: 0.5rem;
     padding: 0.5rem;
     margin-left: 1rem;
     font-weight: bold;
+    font-size: 0.9rem;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-cancel {
+    background: #65d771;
+    color: white;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    margin-left: 1rem;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    font-size: 0.9rem;
 }
 
 /* Comentary */
@@ -907,6 +932,7 @@ main .site-content .singlepostpage .post-title .post-body p span img {
     main .site-content .post-content>.post-image,
     .post-title {
         padding: 0;
+        margin: 5px;
     }
 
     main .site-content .post-title .tags {
@@ -945,4 +971,57 @@ main .site-content .singlepostpage .post-title .post-body p span img {
 
 .overview-text-area{
     width: 100%;
+}
+
+/* MODAL */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: none;
+    overflow: auto;
+    background-color: #000000;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 9999;
+}
+
+.modal-window {
+    position: relative;
+    background-color: #FFFFFF;
+    width: 50%;
+    margin: 10% auto;
+    padding: 20px;
+}
+
+.modal-window.small {
+    width: 30%;
+}
+
+.modal-window.large {
+    width: 75%;
+}
+
+.close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: rgba(0,0,0,0.3);
+    height: 30px;
+    width: 30px;
+    font-size: 30px;
+    line-height: 30px;
+    text-align: center;
+    margin: 5px;
+}
+
+.close:hover,
+.close:focus {
+    color: #000000;
+    cursor: pointer;
+}
+
+.open {
+    display: block;
 }
