@@ -47,12 +47,10 @@ def search(request):
 
 # Pages
 def index(request):
-    """
-        Grab only the posts that have featured=True, in future this will be my owl carousel
-    """
+    # Grab only the posts that have featured=True, in future this will be my owl carousel
     featured = Post.objects.filter(featured=True)
     # Grab onny the first 3 posts and the latest, because of negative timestamp
-    latest = Post.objects.order_by('-timestamp')[0:3]
+    latest = Post.objects.order_by('-timestamp')[0:6]
 
     context = {
         'object_list': featured,
