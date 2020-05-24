@@ -29,34 +29,6 @@
                 <a href="{{ obj.get_absolute_url }}" class="home-title">{{ obj.title }}</a>
             </div>
             {% endfor %}
-
-            <!-- old
-            {% for obj in latest %}
-            <div class="post-content">
-                <div class="post-image">
-                    <div>
-                        <img src="{{ obj.thumbnail.url }}" class="img" alt="{{obj.tittle}}">
-                    </div>
-                    <div class="post-info flex-row">
-                        <span><i class="fas fa-user text-grey"></i>&nbsp;&nbsp;{{ obj.author }}</span>
-                        <span><i class="fas fa-calendar-alt text-grey"></i>&nbsp;{{ obj.timestamp|timesince }} atrás</span>
-                    </div>
-                </div>
-                <div class="post-title">
-                    <a href="{{ post.get_absolute_url }}" class="title"> {{ obj.title }} </a>
-                    <div class="tags flex-row">
-                        {% for cat in obj.categories.all %}
-                        <a href="#">
-                            <span class="tag">{{ cat.title }}</span>
-                        </a>
-                        {% endfor %}
-                    </div>
-                    <p class="display mb-2">{{ obj.overview|truncatechars:300 }}</p>
-                    <button class="btn post-btn">Leia mais &nbsp; <i class="fas fa-arrow-right"></i> </button>
-                </div>
-            </div>
-            {% endfor %}
-            -->
         </div>
     </section>
 </main>
