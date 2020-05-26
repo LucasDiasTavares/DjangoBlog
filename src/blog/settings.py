@@ -147,3 +147,5 @@ LOGIN_REDIRECT_URL = 'post-list'
 LOGOUT_REDIRECT_URL = 'home'
 
 django_heroku.settings(locals())
+
+DISABLE_COLLECTSTATIC=1
