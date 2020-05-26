@@ -1,4 +1,5 @@
 import os
+import django_heroku
 from decouple import config, Csv
 from dj_database_url import parse as dburl
 
@@ -144,3 +145,5 @@ SITE_ID = 1
 LOGIN_URL = '/login/'
 LOGIN_REDIRECT_URL = 'post-list'
 LOGOUT_REDIRECT_URL = 'home'
+
+django_heroku.settings(locals())
